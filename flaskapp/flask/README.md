@@ -14,13 +14,14 @@ Use the flask image from DockerHub
 
 Set the working directory to /app
 
+    RUN mkdir /app
     WORKDIR /app
 
 Copy the application files into the container at /app
 
-    ADD app /app
-    ADD app.ini /app
-    ADD run.py /app
+    COPY app /app
+    COPY app.ini /app
+    COPY run.py /app
 
 
 Expose a port so that nginx can connect
